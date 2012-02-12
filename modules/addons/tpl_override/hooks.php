@@ -15,7 +15,7 @@ TplHook::addHooks();
 
 /**
  * Handles client area rendering
- * @version		@fileVers@
+ * @version		1.0.0
  * @param		array		- $vars: contains data passed by WHMCS hook point
  * 
  * @since		1.0.0
