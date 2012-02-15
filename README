@@ -1,0 +1,12 @@
+Installing TPL Override
+-----------------------
+Installing TPL Override is fairly straight forward and easy to do, please follow these simple instructions:
+
+1. Open your favorite FTP program and upload the 'modules' folder to your WHMCS root directory.
+2. Log into your WHMCS Admin Control Panel and go to Setup > Addon Modules.
+3. Find the row that corresponds to TPL Override and click Activate.
+4. Download any *.tpl files from your selected WHMCS template folder that you wish to customize.
+5. Edit locally the files to your satisfaction.
+6. Upload the modified *.tpl files to this folder off of your WHMCS root: /modules/addons/tpl_override/tpl.  Be sure not to rename the file.
+
+That's it - your customized *.tpl files should now be overwriting the regular template files on the fly!
