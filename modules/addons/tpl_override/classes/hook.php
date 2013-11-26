@@ -127,7 +127,7 @@ class TplHook extends TplObject
 		$current = $GLOBALS['templatefile'];
 		
 		// Workaround for WHMCS 5.2 and PHP 5.3
-		if( empty( $current ) && is_object( $GLOBALS['ca'] ) && version_compare( PHP_VERSION, '5.3', 'ge' ) ) {
+		if( empty( $current ) && ! empty( $_SESSION['uid'] ) && is_object( $GLOBALS['ca'] ) && version_compare( PHP_VERSION, '5.3', 'ge' ) ) {
 			$myObject			=	$GLOBALS['ca'];
 			$reflectionObject	=	new ReflectionObject($myObject);
 			$property			=	$reflectionObject->getProperty( 'templatefile' );
@@ -135,10 +135,13 @@ class TplHook extends TplObject
 			$property->setAccessible(true);
 			$current			=	$property->getValue( $myObject );
 		}
-		 
-		$filename	= dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'tpl' . DIRECTORY_SEPARATOR . $current . '.tpl';
-		if ( @is_readable( $filename ) ) {
-			$tpl_output = $smarty->fetch( 'file:' . $filename );
+		
+		// Just in case we aren't able to get the template file name somehow
+		if (! empty( $current ) ) {
+			$filename	= dirname( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'tpl' . DIRECTORY_SEPARATOR . $current . '.tpl';
+			if ( @is_readable( $filename ) ) {
+				$tpl_output = $smarty->fetch( 'file:' . $filename );
+			}
 		}
 
 		
