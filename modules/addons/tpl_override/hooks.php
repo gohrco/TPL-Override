@@ -9,7 +9,9 @@ if (!defined("WHMCS")) die("This file cannot be accessed directly");
 require_once( "factory.php" );
 /*-- File Inclusions --*/
 
-$TPL_hook = TplFactory::getHook();
+global $TPL_hook;
+
+$TPL_hook	=	TplFactory::getHook();
 TplHook::addHooks();
 
 
