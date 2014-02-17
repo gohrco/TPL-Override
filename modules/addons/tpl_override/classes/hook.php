@@ -88,9 +88,15 @@ class TplHook extends TplObject
 	public function clientarea( $vars )
 	{
 		global $smarty;
+		$version	=	$GLOBALS['CONFIG']['Version'];
 		
 		// Register an output filter to replace templates
-		$smarty->register_outputfilter( array( &$this, 'output_filter' ) );
+		if ( version_compare( $version, '5.3', 'ge' ) ) {
+			$smarty->register_prefilter( array( &$this, 'output_filter' ) );
+		}
+		else {
+			$smarty->register_outputfilter( array( &$this, 'output_filter' ) );
+		}
 	}
 	
 	
