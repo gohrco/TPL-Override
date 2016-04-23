@@ -38,6 +38,9 @@ Using TPL Override is super simple.  Let's say you are working in the /templates
 
 ## Things to be aware of
 
+### Version support
+This version of TPL_Override is tested against 6.3 and not very thoroughly.  There may be templates or there may be earlier versions that this will not work with.  Sorry!
+
 ### Template Cache
 Be sure to clear your template cache in WHMCS > Utilities > System > Cleanup to ensure you are loading the latest version of your custom file.
 
