@@ -15,7 +15,7 @@ function tpl_override_config()
 {
 	$configarray = array(
 		"name"			=> "Template Override",
-		"version"		=> "1.0.0",
+		"version"		=> "2.0.0",
 		"author"		=> "<div style='text-align: center; width: 100%; '>Go Higher<br/>Information Services, LLC</div>",
 		"description"	=> "This addon permits you to override your templates in WHMCS by simply putting your custom files in a separate subdirectory.",
 		"language"		=> "english",
