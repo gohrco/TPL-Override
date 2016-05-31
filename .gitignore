@@ -1,3 +1,5 @@
 .project
 .gitignore
 buildfiles
+/.settings
+/.buildpath

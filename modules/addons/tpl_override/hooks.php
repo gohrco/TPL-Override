@@ -5,9 +5,6 @@
 if (!defined("WHMCS")) die("This file cannot be accessed directly");
 /*-- Security Protocols --*/
 
-/*-- File Inclusions --*/
-require_once( "factory.php" );
-/*-- File Inclusions --*/
 
 
 add_hook( 'ClientAreaPage', 1, function( $vars )
